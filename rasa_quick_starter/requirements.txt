@@ -1,0 +1,5 @@
+rasa_core
+rasa_nlu
+sklearn_crfsuite
+numpy==1.14.5
+setuptools==39.1.0
