@@ -47,3 +47,6 @@ To sum up, this is a good start and useful for structured Q&A
 We believe the next generation of the robot might
 - use RNN(sequence to sequence model) to generate more natural language
 - might build a knowledge-base self-learning framework.
+
+# API reference
+https://rasa.com/docs/core/server/
