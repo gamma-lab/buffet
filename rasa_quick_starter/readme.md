@@ -34,7 +34,7 @@ In the current folder, run the following commands
 
 - train core dialogue: `python -m rasa_core.train -d domain.yml -s stories.md -o models/dialogue`. tensorflow is used to train models and a new folder named `models` will be created after this command.
 - train NLU: `python -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose`， `current` folder is created under `model` after this command.
-- start the conversation: `python -m rasa_core.run -d models/dialogue -u models/current/nlu`, now a web server has beens started (a flask server to serve APIs at port 5005) and you can interact with the bot using command line.
+- start the conversation: `python -m rasa_core.run --enable_api -d models/dialogue -u models/current/nlu`, now a web server has beens started (a flask server to serve APIs at port 5005) and you can interact with the bot using command line.
 - end this conversation by typing:  `/stop`
 
 # Potential Issue
