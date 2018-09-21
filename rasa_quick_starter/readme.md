@@ -45,11 +45,11 @@ pip3 install -r requirements.txt
 ```
 current
  ├── nlu
- │     ├── checkpoint  
- │     ├── intent_classifier_****
- │     ├── intent_featurizer_count_vectore.pkl
- │     ├── training_data.json
- │     └── metadata.json
+ �?    ├── checkpoint  
+ �?    ├── intent_classifier_****
+ �?    ├── intent_featurizer_count_vectore.pkl
+ �?    ├── training_data.json
+ �?    └── metadata.json
  ├── dialogue
      ├── policy_0_FallbackPolicy
            ├── fallback_policy.json
@@ -70,10 +70,10 @@ current
 2. **intent_classifer** is related to the features and models
 
 3. **policy** is how your robot react to the response, it might depend on different type.
-fallback_policy is when robot failed to predict your intent. memorization_policy is ask robot to strictly follow the storied.md
+fallback_policy: when robot failed to predict your intent. memorization_policy: ask robot to strictly follow the storied.md
 kearas policy use keras to train the model (you could define architechture by yourself)  
 
-4. **domain.json** and **domain.yml** contain the same infomation when you defined in domain.yml in the first place  
+4. **domain.json** and **domain.yml** contain the same information when you defined in domain.yml in the first place  
 
 5. **policy_metadata** store the infomation about evaluation of different policies, and ensemble method.
 
@@ -83,7 +83,7 @@ In the current folder, run the following commands
 
 - train core dialogue: `python -m rasa_core.train -d domain.yml -s stories.md -o models/dialogue`. tensorflow is used to train models and a new folder named `models` will be created after this command.
 
-- train NLU: `python -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose`， `current` folder is created under `model` after this command.
+- train NLU: `python -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose`�?`current` folder is created under `model` after this command.
 - start the conversation: `python -m rasa_core.run -d models/dialogue -u models/current/nlu`, now a web server has beens started (a flask server to serve APIs at port 5005) and you can interact with the bot using command line.
 - end this conversation by typing:  `/stop`
 
