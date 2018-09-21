@@ -1,4 +1,4 @@
-# Playing Pacman: Building a Reinforcement Learning Atari Agent
+# Playing Pacman: Building a Reinforcement Learning Agent
 
 Demo on how to build a Deep Q-Network (DQN) [1] using [PyTorch] https://github.com/pytorch/pytorch with environment provided by [OpenAI Gym] https://github.com/openai/gym
 
