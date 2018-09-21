@@ -1,6 +1,6 @@
 # Playing Pacman: Building a Reinforcement Learning Agent
 
-Demo on how to build a Deep Q-Network (DQN) [1] using [PyTorch] https://github.com/pytorch/pytorch with environment provided by [OpenAI Gym] https://github.com/openai/gym
+Demo on how to build a Deep Q-Network (DQN) [1] using PyTorch [2] with environment provided by OpenAI Gym [3].
 
 ## Environment Setup
 We recommend running the code in a virtual environment with Python 3.5.x:
@@ -18,3 +18,5 @@ Run `$ jupyter notebook` and select the `<envname>` kernel to run the demo.
 
 ## References
 * [1] http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12389/11847
+* [2] https://github.com/pytorch/pytorch 
+* [3] https://github.com/openai/gym
