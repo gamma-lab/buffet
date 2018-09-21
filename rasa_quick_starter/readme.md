@@ -5,14 +5,14 @@ This folder has code examples to play with Rasa:
 Rasa has 3 parts:
 
 1. **NLU** (Natural Language Understanding)  
-This part has a customizable pipleline which include entity recognition, feature extraction and model training.
+This part has a customizable pipeline which includes entity recognition, feature extraction and model training.
 This supervised machine learning model is to classify a given text to a predefined "intent".  https://github.com/RasaHQ/rasa_nlu
 
 2. **CORE**   
 This part is to handle the messages and assign an action of the robot. The choice of the action could be entirely hard-coded **one to one** mapping of each intent with a certain action like just print out a message. It also can be predicted by the **pretrained model** based on the chat history. https://github.com/RasaHQ/rasa_core
 
 3. **SDK**  
-This softerware developemnt kit is installed in the server. If we want to customerize the action, we need to install this. eg.take actions to run query in the database and define how front-end robot interact with the customer.
+This software development kit is installed in the server. If we want to customize the action, we need to install this. eg.take actions to run the query in the database and define how front-end robot interact with the customer.
 
 
 # Setup
@@ -27,8 +27,8 @@ pip3 install -r requirements.txt
 ### Description
 - **stories.md**   
  - stories can be interpreted in 2 ways:
-   -  a predifined script that robot should follow. we use (`memorization policy`), predict next action with probability 1 if it appears in the story line,predict with probability 0 if it never occurs.
-   -  sequences of past conversation that model should be trained on (`keras Policy`) LSTM model use sequence of sentences and actions as feature.
+   -  a predefined script that robot should follow. we use (`memorization policy`), predict next action with probability 1 if it appears in the story line,predict with probability 0 if it never occurs.
+   -  sequences of past conversation that model should be trained on (`keras Policy`) LSTM model use sequence of sentences and actions as the feature.
 
 - **domain.yml**
  - define intents, entities, slots, actions
@@ -69,13 +69,13 @@ current
 
 2. **intent_classifer** is related to the features and models
 
-3. **policy** is how your robot react to the response, it might depend on different type.
-fallback_policy is when robot failed to predict your intent. memorization_policy is ask robot to strictly follow the storied.md
-kearas policy use keras to train the model (you could define architechture by yourself)  
+3. **policy** is how your robot react to the response, it has different type.
+fallback_policy: when robot failed to predict your intent. memorization_policy: robot to strictly follow the storied.md
+kearas policy:  use keras to train the model (you could define architecture by yourself)  
 
-4. **domain.json** and **domain.yml** contain the same infomation when you defined in domain.yml in the first place  
+4. **domain.json** and **domain.yml** contain the same information when you defined in domain.yml in the first place  
 
-5. **policy_metadata** store the infomation about evaluation of different policies, and ensemble method.
+5. **policy_metadata** store the information about evaluation of different policies, and ensemble method.
 
 
 # Run
@@ -109,7 +109,7 @@ In the current folder, run the following commands
 3. **SDK**
  - Action
     - a combination of specific task/event
-    - eg. fectch info from database, change record of customer,throwback messages
+    - eg. fetch info from database, change record of customer,throwback messages
  - Event
     - General Purpose Events
       - set a slot
@@ -128,23 +128,23 @@ In the current folder, run the following commands
  tensorflow_embedding(untrained)
 
 2. Entity extraction  
-Extract entity from the recieved messages, the entity extracted is used for run query.
+Extract entity from the received messages, the entity extracted is used for run query.
 
 3. Classification  
 keyword_Intent_Classifier  
 embedding_Intent_classifier  
 sklearn_Intent_classifier  
 
-### Core pipleline
+### Core pipeline
 this is part use training dataset `stories.md`  
-Use tensorflow to train the LSTM model based on the a series of (intent,reaction)
+Use tensorflow to train the LSTM model based on a series of (intent,reaction)
 
 
 # Potential Issue
 
-- Intent has to be predifined and hard coded
-- If we set up two many Intents, we will need more data to train the model(curse of dimensionality)
-- Multiple Intent might cause *imbalanced data* problem. It might failed to predict the category which has less training data.
+- Intent has to be predefined and hard-coded
+- If we set up two many intents, we will need more data to train the model(the curse of dimensionality)
+- Multiple Intent might cause *imbalanced data* problem. It might fail to predict the category which has less training data.
 
 To sum up, this is a good start and useful for structured Q&A
 We can build on rasa and introduce
