@@ -40,6 +40,11 @@
             "class": "rasa_nlu.extractors.crf_entity_extractor.CRFEntityExtractor"
         },
         {
+            "name": "ner_synonyms",
+            "synonyms_file": "entity_synonyms.json",
+            "class": "rasa_nlu.extractors.entity_synonyms.EntitySynonymMapper"
+        },
+        {
             "token_pattern": "(?u)\\b\\w\\w+\\b",
             "strip_accents": null,
             "stop_words": null,
@@ -87,6 +92,6 @@
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20180917-210734",
-    "rasa_nlu_version": "0.13.3"
+    "trained_at": "20180919-151633",
+    "rasa_nlu_version": "0.13.4"
 }
