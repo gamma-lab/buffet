@@ -3,17 +3,17 @@
     "action_listen": {
       "slots": []
     },
-    "utter_happy": {
+    "utter_goodbye": {
       "slots": []
     },
-    "utter_goodbye": {
+    "utter_happy": {
       "slots": []
     },
     "utter_oneconnect": {
       "slots": []
     }
   },
-  "rasa_core": "0.11.3",
+  "rasa_core": "0.11.4",
   "python": "3.6.5",
   "max_histories": [
     null,
