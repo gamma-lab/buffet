@@ -2,11 +2,11 @@
 
 This is the tutorial at: https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html
 
-**Author**: `Sean Robertson <https://github.com/spro/practical-pytorch>`_
+**Author**: Sean Robertson https://github.com/spro/practical-pytorch
 
 ## Data
 Download the data from
-`here <https://download.pytorch.org/tutorial/data.zip>`_
+https://download.pytorch.org/tutorial/data.zip
 and extract it to the current directory.
 
 Included in the ``data/names`` directory are 18 text files named as
@@ -20,8 +20,6 @@ We'll end up with a dictionary of lists of names per language,
 
 ## Setup
 
-for Mac: `brew install cmake`
-
 We recommend running the code in a virtual environment with Python > 3.5.x (fully tested on Python 3.6.5):
 ```
 virtualenv -p python3 venv
@@ -31,7 +29,7 @@ pip3 install -r requirements.txt
 
 Run `jupyter notebook`
 
-## Train
+## Run
 
 The entire notebook takes a few minutes (1m 20s for training process) to run on a MacBook Pro with the following configurations:
 ```
