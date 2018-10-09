@@ -1,6 +1,5 @@
 # Reinforcement Learning with Deep Q-Network (DQN) Tutorial
-This tutorial shows how we can implement a DQN with Pytorch [2] and an action replay buffer to solve a classic control problem CartPole-v0. The environment is provided by OpenAI's gym [3]. 
-The following notebook tutorial can be found [here](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html).
+This tutorial shows how we can implement a DQN with Pytorch [2] and an action replay buffer to solve a classic control problem CartPole-v0. The environment is provided by OpenAI's gym [3].  The following notebook tutorial can be found [here](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html).
 
 ## Setup
 for Mac: `brew install cmake` 
