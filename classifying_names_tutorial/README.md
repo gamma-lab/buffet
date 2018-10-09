@@ -18,6 +18,30 @@ We'll end up with a dictionary of lists of names per language,
 ``{language: [names ...]}``. The generic variables "category" and "line"
 (for language and name in our case) are used for later extensibility.
 
+```
+./data/
+├── eng-fra.txt
+└── names
+    ├── Arabic.txt
+    ├── Chinese.txt
+    ├── Czech.txt
+    ├── Dutch.txt
+    ├── English.txt
+    ├── French.txt
+    ├── German.txt
+    ├── Greek.txt
+    ├── Irish.txt
+    ├── Italian.txt
+    ├── Japanese.txt
+    ├── Korean.txt
+    ├── Polish.txt
+    ├── Portuguese.txt
+    ├── Russian.txt
+    ├── Scottish.txt
+    ├── Spanish.txt
+    └── Vietnamese.txt
+```
+
 ## Setup
 
 We recommend running the code in a virtual environment with Python > 3.5.x (fully tested on Python 3.6.5):
