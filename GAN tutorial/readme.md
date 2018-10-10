@@ -1,6 +1,6 @@
 # Generative Adversarial Networks (GANs)
 
-Demo on how to build a Generative Adversarial Network (GAN)[1] using the paper on DCGAN[2].
+Demo on how to build a Generative Adversarial Network (GAN)[1] using the paper on DCGAN[2]. This demo was created by using the DCGAN tutorial on Pytorch[3].
 
 ## Setup
 
@@ -16,10 +16,13 @@ Run `jupyter notebook`
 
 ## Data
 
-For training the DCGAN network, we have used the MNIST[3] dataset. It contains images of handwritten numbers along with the labels. For training the DCGAN network, we will only use the images and not the labels. The size of the image is 1x28x28. 
+For training the DCGAN network, we have used the MNIST[4] dataset. It contains images of handwritten numbers along with the labels. For training the DCGAN network, we will only use the images and not the labels. The size of the image is 1x28x28. 
 
 ![mnist](https://user-images.githubusercontent.com/30028589/46747656-df0ec480-cc7f-11e8-8a08-c84689631f84.png "MNIST Dataset")
 
 ## References
 
-1.(https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf)
+1. https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf
+2. https://arxiv.org/pdf/1511.06434.pdf
+3. https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+4. http://yann.lecun.com/exdb/mnist/
