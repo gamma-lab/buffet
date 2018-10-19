@@ -1,5 +1,2 @@
-requests
-numpy
-Pillow
-pyzmq
-h5py
+git+https://github.com/outformatics/ParlAI.git@parlai4reddit
+torch

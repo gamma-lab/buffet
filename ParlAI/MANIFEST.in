@@ -1,3 +1,0 @@
-include parlai/mturk/core/server/html/*
-include parlai/mturk/core/server/server.js
-include parlai/mturk/core/server/package.json
