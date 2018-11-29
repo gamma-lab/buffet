@@ -2,17 +2,18 @@
 
 This tutorial is modified from https://github.com/SeanLee97/generate-lyrics-using-PyTorch
 
-The original code is modified compatible with the newest Pytorch version.
+The original code has been modified compatible with the newest Pytorch version.
 
 ## Data:
 
-The dataset is consisting of 7868 lines of Chinese lines lyrics from Jay Chou, which has been removed non-Chinese letter and symbols.
+The underlying dataset is consisting of 7868 lines of Chinese lyrics from Jay Chou, which has been removed non-Chinese letters and symbols.
 
 
 ## Process Understanding:
 
 ### Build word dictionary
-* Built a character to index and index to charactor dictionaries, in this way, we can get all the unique words from underlying data and assign each word with a unique index. Thus, we can transfer all the words into indexes for the training purpose and then transform back for the visualizing the result.
+* Built character to index and index to charactor dictionaries, in this way, we can get all the unique words from underlying data and assign each word with a unique index. Thus, we can transfer all the words into indexes for the training purpose and then transform back for visualizing the result.
+#### Example
 ```
 想要有直升机
 想要和你飞到宇宙去
@@ -28,11 +29,12 @@ The dataset is consisting of 7868 lines of Chinese lines lyrics from Jay Chou, w
 ### Training data generation
 * To generate training data for each epoch, we build a random chunk of size 200 for each epoch and then transform the underlying Chinese data to indexes and then to tensor format for the prepartion for the input to RNN model
 ### Model Implementation
-* The underlying model is a one-layer GRU model, with hidden size 128, learning rate 0.001, and dropout rate 0.1, you can always turn these parameters in order to generate a better performance.
+* The underlying model is a one-layer GRU model, with hidden size 128, learning rate 0.001, and dropout rate 0.1, you can always tune these parameters in order to get a better performance.
 ### Training and Evaluation Process
-* During the training process, the model is fed one word each time then the loss is calculated using the CrossEntropy loss by comparing the output word and the word after the input word, at the end, the loss is averaged for each chunk and printed out. for every 100 epochs. The model trained is saved during the training time and the training process can be terminated and restart.
+* During the training process, the model is fed one word each time then the loss is calculated using the CrossEntropy loss by comparing the output word and the word after the input word, at the end, the loss is averaged for each chunk and printed out for every 100 epochs. The model trained is saved during the training time and the training process can be terminated and restart.
 * During the evaluation process, you can specify the words you want to start with and the length of words you want to generate. 
-
+## Training result:
+The final average negative log likelyhood loss is deducted to 1.3795 after 10000 training epochs.
 ## Result Example:
 ```
 >length 100
@@ -47,6 +49,3 @@ The dataset is consisting of 7868 lines of Chinese lines lyrics from Jay Chou, w
 ```
 ## Future Improvement:
 The training time for `10000` epochs using `GPU` is around `100 mins`, you can increase the number of epochs and turn different model parameters to increase the performance.
-
-## Note:
-The comments for each function and the dimention of each layer in the RNN model are specified in the notebook. 
