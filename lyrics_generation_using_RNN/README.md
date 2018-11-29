@@ -1,11 +1,12 @@
 # Lyrics generation using RNN 
+
 This tutorial is modified from https://github.com/SeanLee97/generate-lyrics-using-PyTorch
 
-The original code is written in Pytorch 2, which has been made compatible with Pytorch 3.
+The original code is modified compatible with the newest Pytorch version.
 
 ## Data:
 
-The dataset is consisting of 7387 lines of Chinese lines lyrics from Jay Chou, which has been removed non-Chinese letter and symbols.
+The dataset is consisting of 7868 lines of Chinese lines lyrics from Jay Chou, which has been removed non-Chinese letter and symbols.
 
 
 ## Process Understanding:
