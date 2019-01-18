@@ -2,6 +2,13 @@
 
 Based off of the code repo [TC-Bot](https://github.com/MiuLab/TC-Bot) and paper [End-to-End Task-Completion Neural Dialogue Systems](http://aclweb.org/anthology/I17-1074). This repo is a simplified version of TC-Bot, it performs at a similar level of accuracy, although it is not directly comparable.
 
+# Train the model
+make install
+make train
+
+# Test the model
+make test
+
 ## Details
 
 This shows how to train a simple DQN agent with deep reinforcement learning as a goal-oriented chatbot using a simple user simulator. The code is a simplified version of TC-Bot by MiuLab with the main difference being that this code does not include NLG or NLU components but just trains the dialogue manager. NL components are not necessary to understand how a GO chatbot is trained with DRL and therefore are not implemented.
