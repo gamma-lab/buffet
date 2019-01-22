@@ -110,3 +110,5 @@ rasa_quick_starter/models
 
 # chatbot tutorial data folder
 pytorch_chatbot_tutorial/data
+
+pytorch_blitz/data
