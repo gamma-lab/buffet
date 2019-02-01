@@ -29,17 +29,12 @@ create a `data` folder and copy the unzipped data folder with name `cornell movi
 
 ## Setup and Run
 
-This tutorial requires PyTorch 1.0 and the nightly build is not available for pip yet. We have to use conda to install:
-
-- install miniconda on Mac: https://conda.io/docs/user-guide/install/macos.html, remember to `source /Users/harrywang/.bash_profile`
-
-We recommend running the code in conda virtual environment with Python 3.x:
+This tutorial requires PyTorch 1.0 or later. We recommend running the code in a virtual environment with Python 3.6:
 ```
-conda create -n chatbot python=3.6
-source activate chatbot
-conda install pytorch-nightly -c pytorch
+virtualenv -p python3.6 venv
+source venv/bin/activate
+pip3 install -r requirements.txt
 ```
-
 Run `jupyter notebook`
 
 deactivate `source deactivate`
@@ -95,4 +90,17 @@ Error: Encountered unknown word.
 Bot: hi .
 > ok, bye
 Bot: bye bye .
+```
+
+
+## Deprecated Conda Setup
+
+The nightly build is not available for pip yet. We have to use conda to install:
+
+- install miniconda on Mac: https://conda.io/docs/user-guide/install/macos.html, remember to `source /Users/harrywang/.bash_profile`
+We recommend running the code in conda virtual environment with Python 3.x:
+```
+conda create -n chatbot python=3.6
+source activate chatbot
+conda install pytorch-nightly -c pytorch
 ```
