@@ -9,7 +9,16 @@
 4. `pip install -r requirements.txt`
 
 
-# Execute
+# Python Interface
+
+_The script is configured to use CPU in `squad._load()` function. Executing a batch is significantly fast on GPU._
+
+```python
+import squad
+print(squad.qa_system_predict(paragraph_text, question_text))
+```
+
+# HTTP Interface
 
 1. `python main.py`
-2. Open http://localhost:5000
+2. Open http://localhost:8881
