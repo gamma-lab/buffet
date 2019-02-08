@@ -357,7 +357,7 @@ def get_predictions(all_examples, all_features, all_results, n_best_size,
             reverse=True)
 
         _NbestPrediction = collections.namedtuple(  # pylint: disable=invalid-name
-            "NbestPrediction", ["text", "start_logit", "end_logit"])
+            "NbestPrediction", ["text", "start_logit", "end_logit", "start_index", "end_index"])
 
         seen_predictions = {}
         nbest = []
@@ -365,6 +365,9 @@ def get_predictions(all_examples, all_features, all_results, n_best_size,
             if len(nbest) >= n_best_size:
                 break
             feature = features[pred.feature_index]
+            orig_doc_start = 0
+            orig_doc_end = 0
+
             if pred.start_index > 0:
                 tok_tokens = feature.tokens[pred.start_index:(pred.end_index + 1)]
                 orig_doc_start = feature.token_to_orig_map[pred.start_index]
@@ -393,20 +396,26 @@ def get_predictions(all_examples, all_features, all_results, n_best_size,
                 _NbestPrediction(
                     text=final_text,
                     start_logit=pred.start_logit,
-                    end_logit=pred.end_logit))
+                    end_logit=pred.end_logit,
+                    start_index=orig_doc_start,
+                    end_index=orig_doc_end))
 
         # if we didn't inlude the empty option in the n-best, inlcude it
         if "" not in seen_predictions:
             nbest.append(
                 _NbestPrediction(
-                    text="", start_logit=null_start_logit,
-                    end_logit=null_end_logit))
+                    text="",
+                    start_logit=null_start_logit,
+                    end_logit=null_end_logit,
+                    start_index=0,
+                    end_index=0))
 
         # In very rare edge cases we could have no valid predictions. So we
         # just create a nonce prediction in this case to avoid failure.
         if not nbest:
             nbest.append(
-                _NbestPrediction(text="empty", start_logit=0.0, end_logit=0.0))
+                _NbestPrediction(text="empty", start_logit=0.0, end_logit=0.0,
+                    start_index=0, end_index=0))
 
         assert len(nbest) >= 1
 
@@ -438,7 +447,11 @@ def get_predictions(all_examples, all_features, all_results, n_best_size,
         if score_diff > null_score_diff_threshold:
             all_predictions[example.qas_id] = ""
         else:
-            all_predictions[example.qas_id] = best_non_null_entry.text
+            all_predictions[example.qas_id] = (
+                best_non_null_entry.text,
+                max(0, best_non_null_entry.start_index),
+                max(0, best_non_null_entry.end_index),
+            )
 
         all_nbest_json[example.qas_id] = nbest_json
 
@@ -676,6 +689,7 @@ def qa_system_predict(paragraph_text, question_text):
         args.verbose_logging, args.null_score_diff_threshold)
 
     # 1 is the fixed key see create_example() ..
+    logger.info(results)
     return results[1]
 
 
