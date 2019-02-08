@@ -9,7 +9,7 @@ app = Flask("SQuAD")
 def index():
     context = {}
     if request.method == "POST":
-        answer_text = qa_system_predict(
+        answer_text, start_word, end_word = qa_system_predict(
             request.form["paragraph"],
             request.form["question"])
         context = dict(
