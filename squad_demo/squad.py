@@ -604,7 +604,7 @@ class Arguments(object):
 def _load():
     args = Arguments(
         bert_model="bert-large-uncased",
-        output_model_file="bert_pytorch_model.bin",
+        output_model_file=os.environ.get("BERT_MODEL_FILE", "bert_pytorch_model.bin"),
         max_seq_length=384,
         doc_stride=128,
         max_query_length=64,
