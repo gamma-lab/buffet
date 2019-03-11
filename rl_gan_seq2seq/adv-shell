@@ -1,0 +1,8 @@
+
+HPARAMS_FILE=parameters_irl_part
+
+python -u irl-gan.py $(head -$SLURM_ARRAY_TASK_ID $HPARAMS_FILE | tail -1)
+
+
+
+
